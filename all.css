@@ -48,11 +48,10 @@ table {
 }
 
 /*全域設定*/
-*{
+*, *:before, *:after {
     box-sizing: border-box;
-    border: 1px solid #fff;
+    -webkit-box-sizing: border-box;
 }
-
 img{
     max-width: 100%;
     height: auto;
@@ -110,6 +109,17 @@ p{
     font-size: 48px;
 }
 
+.tittle-pb-s{
+    padding-bottom: 32px;
+}
+
+.itemTittle{
+    color: #AA0601;
+    text-align: center;
+    margin-bottom: 48px;
+    font-weight: 800;
+}
+
 /*font-color*/
 .fc1{
     color: #AA0601;
@@ -138,16 +148,13 @@ p{
     padding-bottom: 48px;
 }
 
-.tittle-pb-s{
-    padding-bottom: 32px;
-}
-
 /*nav item1*/
 .nav{
+    width: 100%;
     background-color: #AA0601;
 }
 
-.nav .inner{
+.inner{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -158,21 +165,58 @@ p{
     padding: 16px 0;
 }
 
-.nav .inner ul{
+.inner ul{
     display: flex;
 }
 
-.nav .inner li a{
+.inner li a{
     text-decoration: none;
-    padding-right: 64px;
+    margin-right: 64px;
     color: #fff;
+    text-align: center;
+}
 
-    &:hover{
-        color: #AA0601;
+
+@media (max-width: 768px) {
+
+    .nav .container{
+        padding: 0;
+    }
+
+    .container{
+        padding: 0 16px;
+    }
+
+    .inner{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .inner img{
+        margin-left:16px
+    }
+
+    .inner ul{
+		flex-wrap: wrap;
+	}
+
+    .inner li{
+        font-size: 24px;
+        border:1px solid #fff;
+        display: flex;
+        width: 50%;
+    }
+
+    .inner li a{
+        margin: 0 auto;
+        padding: 12px 62px;
     }
 }
 
-/*nav item2*/
+
+/*banner item2*/
 .banner{
     background: url(img/home-header.png) center top;
 }
@@ -199,6 +243,15 @@ p{
     }
 }
 
+
+@media (max-width: 768px){
+    .banner{
+        background: url(img/home-header-sm.png) center top;
+    }
+    
+}
+
+/*prof item3*/
 .prof{
     background-color: #FBF2F2;
     text-align: center;
@@ -206,7 +259,6 @@ p{
 
 .prof ul{
     display: flex;
-    
 }
 
 .prof img{
@@ -218,7 +270,30 @@ p{
     text-align: left;
 }
 
+
+
+@media (max-width: 768px) {
+    h2{
+        font-size: 48px;
+        padding-bottom: 8px;
+    }
+
+    .prof ul{
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 60%;
+        margin: 0 auto;
+    }
+
+    .prof li p{
+        margin-bottom: 32px;
+    }
+}
+
+
+/*prod item4*/
 .prod{
+    width: 100%;
     text-align: center;
 }
 
@@ -226,10 +301,15 @@ p{
     display: flex;
 }
 
-/* .prod img{
-    width: calc(100%/3)-2%;
-} */
+@media (max-width: 768px) {
+    .prod ul{
+        flex-wrap: wrap;;
+        margin: 0 auto;
+    }
+}
 
+
+/*glasses item5*/
 .glasses{
     background-image: url(img/index-bg.png);
     background-repeat: no-repeat;
@@ -241,12 +321,25 @@ p{
 
 .glasses ul{
     display: flex;
+    
 }
 
 .glasses li{
     background-color: #fff;
 }
 
+@media (max-width: 768px) {
+    .container ul{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .glasses li{
+        margin-bottom: 24px;
+    }
+}
+
+
+/*recom item6*/
 .recom ul{
     display: flex;
     justify-content: space-between;
@@ -272,10 +365,64 @@ p{
     font-size: 14px;
 }
 
+@media (max-width: 768px) {
+    .recom li{
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}
+
+
 .footer{
+    width: 100%;
     background-color: #AA0601;
     color: #fff;
 }
+
+/*form item7*/
+.form{
+    background-color: #FBF2F2;
+}
+
+form{
+    margin: 0 auto;
+    width: calc(100%/2);
+}
+
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #000;
+}
+
+.input-btn{
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 48px;
+    
+}
+
+.input-btn a h4{
+    color: #fff;
+    text-align: center;
+    padding: 16px 0;
+    background-color: #AA0601;
+    &:hover{
+        color: #AA0601;
+        background-color: #fff;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .recom li{
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}
+
 
 .wrap{
     display: flex;
@@ -283,6 +430,7 @@ p{
     align-items: center;
     padding-top: 60px;
 }
+
 .wrap ul{
     display: flex;
 }
@@ -309,6 +457,7 @@ p{
 .contect{
     padding-bottom: 32 px;
 }
+
 .contect h3{
     color: #fff;
     font-weight: 200;
@@ -320,6 +469,7 @@ p{
 }
 
 .copylight{
+    width: 100%;
     border-top: 1px solid #fff;
     display: flex;
     justify-content: space-between;
